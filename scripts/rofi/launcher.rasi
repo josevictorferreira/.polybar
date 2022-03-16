@@ -97,6 +97,7 @@ element {
 element-icon {
     size:                           24px;
     border:                         0px;
+    background-color:               inherit;
 }
 
 element-text {
@@ -104,10 +105,13 @@ element-text {
     horizontal-align:               0;
     vertical-align:                 0.5;
     margin:                         0px 2.5px 0px 2.5px;
+    background-color:               inherit;
+    text-color:                     inherit;
 }
 
 element selected {
     background-color:               @se;
+    foreground-color:               @se;
     text-color:                     @fg;
 	border:							0px 0px 0px 2px;
     border-radius:                  0px;

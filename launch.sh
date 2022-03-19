@@ -18,7 +18,9 @@ if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
     echo $m
     MONITOR=$m polybar -q top -c "$DIR"/config.ini &
+    sleep 1
     MONITOR=$m polybar -q bottom -c "$DIR"/config.ini &
+    sleep 1
   done
 else
   polybar -q top -c "$DIR"/config.ini &

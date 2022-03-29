@@ -27,6 +27,6 @@ else
   polybar -q bottom -c "$DIR"/config.ini &
 fi
 
-ln -rs /tmp/polybar_mqueue.$! /tmp/ipc-bottom
+#ln -rs /tmp/polybar_mqueue.$! /tmp/ipc-bottom
 
 echo message >/tmp/ipc-bottom

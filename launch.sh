@@ -15,9 +15,9 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1 | tac); do
     MONITOR=$m polybar -q top -c "$DIR"/config.ini &
-    sleep 2
+    sleep 1
     MONITOR=$m polybar -q bottom -c "$DIR"/config.ini &
-    sleep 2
+    sleep 1
   done
 else
   polybar -q top -c "$DIR"/config.ini &

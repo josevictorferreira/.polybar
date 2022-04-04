@@ -8,7 +8,7 @@
  */
 
 configuration {
-	font:							"FiraCode Nerd Font 10";
+	font:							"Cousine Nerd Font 10";
     show-icons:                     true;
 	icon-theme: 					"Papirus";
     display-drun: 					"";

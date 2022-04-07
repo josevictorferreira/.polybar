@@ -39,6 +39,7 @@ listen() {
 }
 
 toggle() {
+    pactl set-default-source @DEFAULT_SOURCE
     pactl set-source-mute @DEFAULT_SOURCE@ toggle
 }
 

@@ -39,7 +39,8 @@ listen() {
 }
 
 toggle() {
-    pactl set-default-source @DEFAULT_SOURCE
+    pactl set-default-source alsa_input.usb-Creative_Technology_Ltd_Sound_Blaster_X3_FD26F3C983F45B9E-03.iec958-stereo
+    pactl set-default-source easyeffects_source 
     pactl set-source-mute @DEFAULT_SOURCE@ toggle
 }
 

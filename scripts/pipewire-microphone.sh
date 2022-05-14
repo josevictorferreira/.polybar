@@ -1,7 +1,7 @@
 #!/bin/sh
 
 get_mic_default() {
-    pw-cat --record --list-targets | sed -n -E "1 s/^.*: (.*)/\1/p"
+    pactl get-default-source
 }
 
 is_mic_muted() {
@@ -39,16 +39,21 @@ listen() {
 }
 
 toggle() {
-    pactl set-default-source alsa_input.usb-Creative_Technology_Ltd_Sound_Blaster_X3_FD26F3C983F45B9E-03.iec958-stereo
+    pactl set-default-source alsa_input.usb-Creative_Technology_Ltd_Sound_Blaster_X3_83F45B9EFD26F3C9-03.pro-input-0
     pactl set-default-source easyeffects_source 
-    pactl set-source-mute @DEFAULT_SOURCE@ toggle
+    pactl set-source-mute easyeffects_source toggle
 }
 
-case "$1" in
-    --toggle)
-        toggle
-        ;;
-    *)
-        listen
-        ;;
-esac
+
+main() {
+  case "$1" in
+      --toggle)
+          toggle
+          ;;
+      *)
+          listen
+          ;;
+  esac
+}
+
+main "$@"

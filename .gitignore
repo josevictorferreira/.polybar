@@ -1,3 +1,6 @@
 
 /scripts/openweathermap-fullfeatured.sh
 scripts/openweathermap-fullfeatured.sh
+scripts/bank_secrets.sh
+scripts/client.crt
+scripts/client.key

@@ -9,6 +9,15 @@ source "$HOME/.config/polybar/scripts/bank_secrets.sh"
 CRT_FILE_PATH="$HOME/.config/polybar/scripts/client.crt"
 KEY_FILE_PATH="$HOME/.config/polybar/scripts/client.key"
 
+is_internet_connected () {
+  interface=$(ifconfig enp4s0 | grep inet)
+  if [[ $interface == "" ]]; then
+    echo 0
+  else
+    echo 1
+  fi
+}
+
 get_token () {
   curl -s -X POST "$BASE_URL/oauth/v2/token" -H "Content-Type: application/x-www-form-urlencoded" --cert "$CRT_FILE_PATH" --key "$KEY_FILE_PATH" --data "client_id=$CLIENT_ID" --data "client_secret=$CLIENT_SECRET" --data "grant_type=client_credentials" --data "scope=extrato.read" | jq -r '.access_token'
 }
@@ -20,6 +29,7 @@ get_account_balance () {
 }
 
 main () {
+  while [ "$(is_internet_connected)" == "0" ]; do sleep 5; done
   token=$(get_token)
   get_account_balance "$token"
 }

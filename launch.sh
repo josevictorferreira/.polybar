@@ -4,6 +4,9 @@
 
 DIR="$HOME/.config/polybar"
 
+PRIMARY=$(xrandr --query | grep " connected" | grep "primary" | cut -d" " -f1)
+OTHERS=$(xrandr --query | grep " connected" | grep -v "primary" | cut -d" " -f1)
+
 # Terminate already running bar instances
 killall -q polybar
 
@@ -13,11 +16,14 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 # Launch the bar
 
 if type "xrandr"; then
-  for m in $(xrandr --query | grep " connected" | cut -d" " -f1 | tac); do
+  for p in $PRIMARY; do
+    MONITOR=$p polybar -q top -c "$DIR"/config.ini &
+    MONITOR=$p polybar -q bottom -c "$DIR"/config.ini &
+  done
+  sleep 1
+  for m in $OTHERS; do
     MONITOR=$m polybar -q top -c "$DIR"/config.ini &
-    sleep 3
     MONITOR=$m polybar -q bottom -c "$DIR"/config.ini &
-    sleep 3
   done
 else
   polybar -q top -c "$DIR"/config.ini &

@@ -80,10 +80,16 @@ elif  [[ $1 = "--mode10" ]]; then
 	FG="FFFFFF"
 	AC="#FFD16F"
 	change_color
+elif [[ $1 = "--mode11" ]]; then
+  BG="16161D"
+  FG="C7D7E0"
+  AC="#7E9CD8"
+  change_color
 else
 	cat <<- _EOF_
 	No option specified, Available options:
 	--mode1   --mode2   --mode3   --mode4   --mode5
 	--mode6   --mode7   --mode8   --mode9   --mode10
+  --mode11
 	_EOF_
 fi

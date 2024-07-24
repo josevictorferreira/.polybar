@@ -5,7 +5,7 @@ SDIR="$HOME/.config/polybar/scripts"
 # Launch Rofi
 MENU="$(rofi -no-config -no-lazy-grab -sep "|" -dmenu -i -p '' \
 -theme $SDIR/rofi/styles.rasi \
-<<< " Black| Adapta| Dark| Red| Green| Teal| Gruvbox| Nord| Solarized| Cherry|")"
+<<< " Black| Adapta| Dark| Red| Green| Teal| Gruvbox| Nord| Solarized| Cherry|Kanagawa")"
             case "$MENU" in
 				*Black) "$SDIR"/styles.sh --mode1 ;;
 				*Adapta) "$SDIR"/styles.sh --mode2 ;;
@@ -17,4 +17,5 @@ MENU="$(rofi -no-config -no-lazy-grab -sep "|" -dmenu -i -p '' \
 				*Nord) "$SDIR"/styles.sh --mode8 ;;
 				*Solarized) "$SDIR"/styles.sh --mode9 ;;
 				*Cherry) "$SDIR"/styles.sh --mode10 ;;
+        *Kanagawa) "$SDIR"/styles.sh --mode11 ;;
             esac

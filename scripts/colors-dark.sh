@@ -4,8 +4,10 @@
 PFILE="$HOME/.config/polybar/colors.ini"
 RFILE="$HOME/.config/polybar/scripts/rofi/colors.rasi"
 
-BG="0a0a0a"
-FG="f5f5f5"
+# BG="0a0a0a"
+# FG="f5f5f5"
+BG="16161D"
+FG="C7D7E0"
 
 # Change colors
 change_color() {
@@ -90,6 +92,9 @@ elif  [[ $1 = "--teal" ]]; then
 elif  [[ $1 = "--yellow" ]]; then
 	AC="#fdd835"
 	change_color
+elif  [[ $1 = "--kanagawa" ]]; then
+  AC="#7E9CD8"
+  change_color
 else
 	cat <<- _EOF_
 	No option specified, Available options:
@@ -97,6 +102,6 @@ else
 	--cyan	--deep-orange	--deep-purple	--green
 	--gray	--indigo	--light-blue	--light-green
 	--lime	--orange	--pink		--purple
-	--red	--teal		--yellow
+	--red	--teal		--yellow    --kanagawa
 	_EOF_
 fi

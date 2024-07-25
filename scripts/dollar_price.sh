@@ -29,7 +29,7 @@ format_price() {
 main() {
   dollar_raw_price=$(get_dollar_price_in_brazilian_reais)
   rounded_dollar_price=$(format_price $dollar_raw_price)
-  echo " USD: $rounded_dollar_price BRL "
+  echo "$rounded_dollar_price BRL "
 }
 
 main "$@"

@@ -14,7 +14,7 @@ PLAYER="spotify"
 # Format of the information displayed
 # Eg. {{ artist }} - {{ album }} - {{ title }}
 # See more attributes here: https://github.com/altdesktop/playerctl/#printing-properties-and-metadata
-FORMAT="{{ title }} - {{ artist }}"
+FORMAT=" {{ title }} - {{ artist }} "
 
 # Sends $2 as message to all polybar PIDs that are part of $1
 update_hooks() {
@@ -30,7 +30,7 @@ EXIT_CODE=$?
 if [ $EXIT_CODE -eq 0 ]; then
     STATUS=$PLAYERCTL_STATUS
 else
-    STATUS="No player is running"
+    STATUS=" No player is running "
 fi
 
 if [ "$1" == "--status" ]; then

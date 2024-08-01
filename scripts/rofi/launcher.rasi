@@ -8,15 +8,15 @@
  */
 
 configuration {
-	font:							"Cousine Nerd Font 10";
-    show-icons:                     true;
-	icon-theme: 					"Papirus";
-    display-drun: 					"";
-    drun-display-format:            "{name}";
-    disable-history:                false;
-    fullscreen:                     false;
-	hide-scrollbar: 				true;
-	sidebar-mode: 					false;
+	font:						               	"ProFont IIX Nerd Font Mono 11";
+  show-icons:                     true;
+	icon-theme: 					          "Papirus";
+  display-drun: 					        "";
+  drun-display-format:            "{name}";
+  disable-history:                false;
+  fullscreen:                     false;
+	hide-scrollbar: 	            	true;
+	sidebar-mode: 		            	false;
 }
 
 @import "colors.rasi"
@@ -39,7 +39,8 @@ prompt {
 	padding: 						0px;
 	background-color: 				@al;
 	text-color: 					@ac;
-	font:							"feather 12";
+//	font:							"feather 12";
+  font: "ProFont IIX Nerd Font Mono 12";
 }
 
 entry {

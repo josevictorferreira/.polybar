@@ -10,13 +10,13 @@ while true; do
     # notify user of updates
     if hash notify-send &>/dev/null; then
         if (( UPDATES > 50 )); then
-            notify-send -u critical -i $NOTIFY_ICON \
+            notify-send -u critical \
                 "You really need to update!!" "$UPDATES New packages"
         elif (( UPDATES > 25 )); then
-            notify-send -u normal -i $NOTIFY_ICON \
+            notify-send -u normal \
                 "You should update soon" "$UPDATES New packages"
         elif (( UPDATES > 2 )); then
-            notify-send -u low -i $NOTIFY_ICON \
+            notify-send -u low \
                 "$UPDATES New packages"
         fi
     fi

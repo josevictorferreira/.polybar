@@ -10,7 +10,7 @@
 configuration {
 	font:						               	"ProFont IIX Nerd Font Mono 11";
   show-icons:                     true;
-	icon-theme: 					          "Papirus";
+	icon-theme: 					          "Kanagawa";
   display-drun: 					        "";
   drun-display-format:            "{name}";
   disable-history:                false;
@@ -28,7 +28,7 @@ window {
 	border:							0px;
 	border-color:					@ac;
     border-radius:                  0px;
-	width:							500px;
+	width:							650px;
     location:                       center;
     x-offset:                       0;
     y-offset:                       0;

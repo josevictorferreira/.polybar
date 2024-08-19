@@ -8,9 +8,9 @@
  */
 
 configuration {
-	font:							"Cousine Nerd Font 10";
+	font:							"ProFont IIX Nerd Font Mono 11";
     show-icons:                     true;
-	icon-theme: 					"Papirus";
+	icon-theme: 					"Kanagawa";
     display-drun: 					"";
     drun-display-format:            "{name}";
     disable-history:                false;
